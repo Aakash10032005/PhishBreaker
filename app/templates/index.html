@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PhishBreaker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>PhishBreaker</h1>
+    <p class="subtitle">
+      Enter a URL to check for phishing activity.<br>
+      The system combines ML prediction and VirusTotal reputation to produce a unified safety score.
+    </p>
+
+    <form method="post" class="url-form">
+      <input type="text" name="url" placeholder="https://example.com/login" required>
+      <button type="submit">Check URL</button>
+    </form>
+
+    {% if error %}
+      <div class="alert error">{{ error }}</div>
+    {% endif %}
+
+    {% if result %}
+      <div class="result-card">
+        <h2>Prediction:
+          <span class="{{ 'warn' if result=='Phishing' else 'safe' }}">{{ result }}</span>
+        </h2>
+
+        {% if details %}
+          <div class="score-container">
+            <p>Safe Browsing Score:</p>
+            <div class="score-bar">
+              <div id="score-fill" class="score-fill"></div>
+            </div>
+            <p id="score-label" class="score-value"></p>
+          </div>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              const score = {{ details.safe_score | round(2) }};
+              const fill = document.getElementById("score-fill");
+              const label = document.getElementById("score-label");
+              fill.style.width = score + "%";
+              label.textContent = score + " / 100";
+              if (score >= 80) fill.style.background = "linear-gradient(90deg, #00e676, #00c853)";
+              else if (score >= 50) fill.style.background = "linear-gradient(90deg, #ffd54f, #ffb300)";
+              else fill.style.background = "linear-gradient(90deg, #ff5252, #d50000)";
+            });
+          </script>
+
+          <div class="info-grid">
+            <p><strong>Model Probability:</strong> {{ details.model_prob }}</p>
+            {% if details.vt %}
+              <p><strong>VirusTotal Score:</strong> {{ details.vt.vt_score }}</p>
+              {% if details.vt.permalink %}
+                <p><strong>VirusTotal Report:</strong>
+                  <a href="{{ details.vt.permalink }}" target="_blank" class="vt-link" style="color: azure;">View Report</a>
+                </p>
+              {% endif %}
+            {% else %}
+              <p>VirusTotal data unavailable (no API key configured)</p>
+            {% endif %}
+          </div>
+
+          <!-- Extracted Features -->
+          <div class="features">
+            <h3>Extracted Features</h3>
+            <div class="domain-name">{{ details.features['domain'] }}</div>
+            <div class="features-grid">
+              {% for key, value in details.features.items() %}
+                {% if key != 'domain' %}
+                <div class="feature-box">
+                  <span>{{ key }}</span>
+                  <span>{{ value }}</span>
+                </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <footer>
+      <p>Predictions logged at <code>data/logs/predictions.csv</code></p>
+    </footer>
+  </div>
+</body>
+</html>

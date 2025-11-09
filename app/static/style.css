@@ -1,0 +1,159 @@
+body {
+  background: linear-gradient(145deg, #0d1b1e, #0c2024);
+  color: #e0e0e0;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 30px;
+}
+
+.container {
+  background: rgba(20, 25, 30, 0.9);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.3);
+  width: 700px;
+  text-align: center;
+}
+
+h1 {
+  color: #4dd0e1;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 0.95em;
+  color: #b0bec5;
+  margin-bottom: 25px;
+}
+
+.url-form input {
+  width: 70%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #1b2226;
+  color: #fff;
+}
+
+.url-form button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #4dd0e1;
+  color: #000;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.url-form button:hover {
+  background: #26c6da;
+}
+
+.result-card {
+  background: #11191c;
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.safe { color: #00e676; font-weight: 700; }
+.warn { color: #ff5252; font-weight: 700; }
+
+.score-container { margin-top: 15px; }
+.score-bar {
+  background: #2c2c2c;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 12px;
+  margin-bottom: 6px;
+}
+.score-fill {
+  width: 0%;
+  height: 100%;
+  transition: width 1.5s ease;
+  border-radius: 10px;
+}
+.score-value {
+  font-weight: 700;
+  color: #4dd0e1;
+}
+
+.info-grid p {
+  margin: 6px 0;
+  font-size: 0.95em;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.feature {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  padding: 6px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.feature .f-key {
+  color: #90caf9;
+}
+
+.feature .f-value {
+  color: #e0e0e0;
+  font-weight: 500;
+}
+
+footer {
+  font-size: 0.8em;
+  color: #78909c;
+  margin-top: 25px;
+}
+/* Extracted Features Section */
+.features {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.domain-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  background: #121a1e;
+  border: 1px solid #263238;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.1);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+}
+
+.feature-box {
+  background-color: #121a1e;
+  padding: 8px 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #263238;
+  color: #b0bec5;
+  font-size: 0.9rem;
+}
+
+.feature-box span:first-child {
+  color: #90caf9;
+}
+
