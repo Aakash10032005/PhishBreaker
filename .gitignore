@@ -148,3 +148,4 @@ Thumbs.db
 
 # Model files (exclude from version control)
 phishguard_model.pkl
+.vercel
