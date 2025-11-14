@@ -26,3 +26,12 @@ timestamp,url,label,model_prob,vt_score,safe_score,registered_domain
 2025-11-09T07:14:05.252359,https://secure-update-login.com,Legitimate,0.3431,0.0,77.7,secure-update-login.com
 2025-11-09T07:14:11.939942,https://google.com,Legitimate,0.0093,0.0,99.39,google.com
 2025-11-09T07:14:43.276468,http://www.pashminaonline.com/pure-pashminas,Phishing,1.0,0.01020408163265306,34.64,www.pashminaonline.com
+2025-11-10T05:33:55.295104,https://www.google.com,Legitimate,0.0,0.0,100.0,www.google.com
+2025-11-10T05:35:17.077433,http://paypal-login.verifyuser.com,Phishing,0.9667,0.0,37.17,paypal-login.verifyuser.com
+2025-11-10T05:36:08.567186,https://secure-update-login.com,Legitimate,0.3431,0.0,77.7,secure-update-login.com
+2025-11-10T05:37:09.241107,https://convite-premiumblack.com/home.php?hash=484538180690e0a6e263702.08889442,Phishing,1.0,0.16326530612244897,29.29,convite-premiumblack.com
+2025-11-10T05:43:45.642493,https://www.google.com,Legitimate,0.0,0.0,100.0,www.google.com
+2025-11-10T05:45:04.539856,https://convite-premiumblack.com/home.php?hash=484538180690e0a6e263702.08889442,Phishing,1.0,0.16326530612244897,29.29,convite-premiumblack.com
+2025-11-10T05:46:53.941819,http://secure-update-account-login.com,Phishing,0.8733,0.0,43.23,secure-update-account-login.com
+2025-11-14T08:25:10.445108,http://secure-update-account-login.com,Phishing,0.8733,0.00510204081632653,43.05,secure-update-account-login.com
+2025-11-14T08:33:12.215117,http://paypal-login.verifyuser.com,Phishing,0.9667,0.0,37.17,paypal-login.verifyuser.com
